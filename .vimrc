@@ -1,41 +1,45 @@
 filetype plugin indent on
 
-syntax on
-
-set nowrap
-
-set hlsearch
-set ignorecase
-set smartcase
-
-set autoindent
+set nowrap        "’·‚¢s‚ğÜ‚è•Ô‚³‚È‚¢
 set ruler
-set number
 set wildmenu
 set showcmd
 
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set tabstop=4
-set smarttab
+" #####ƒ^ƒu“ü—Íİ’è#####
+set shiftwidth=4   "vim‚ª©“®‚Å¶¬‚·‚éi“Ç‚İ‚İ‚È‚Çjtab•‚ğƒXƒy[ƒX4‚Â•¶‚É‚·‚é
+"set softtabstop=4 ƒL[ƒ{[ƒh‚ÅTAB‚ğ“ü—Í‚µ‚½ÛATAB‚ğ4•¶š‚ÌƒXƒy[ƒX‚ğ“ü—Í‚·‚é
+"set expandtab     TAB‚ğƒXƒy[ƒX‚É•ÏŠ·
+set smarttab       "s“ª‚ÅTAB‚ğ“ü—Í‚µ‚½Ashiftwidth‚Ì’l‚¾‚¯ƒCƒ“ƒfƒ“ƒg‚·‚é
+set smartindent    "‰üs‚É©“®‚ÅƒCƒ“ƒfƒ“ƒg‚ğ“ü‚ê‚é
 
-set clipboard=unnamed
+set clipboard=unnamed "ƒNƒŠƒbƒvƒ{[ƒh‚ğg‚¦‚é‚æ‚¤‚É‚·‚é
 
-set cursorline
-set pumheight=10
-set smartindent
 set history=50
 
-" ã‚¤ãƒ³ã‚µãƒ¼ãƒˆãƒ¢ãƒ¼ãƒ‰ã®æ™‚ã« C-j ã§ãƒãƒ¼ãƒãƒ«ãƒ¢ãƒ¼ãƒ‰ã«æˆ»ã‚‹
-imap <C-j> <esc>
-" [ ã£ã¦æ‰“ã£ãŸã‚‰ [] ã£ã¦å…¥åŠ›ã•ã‚Œã¦ã—ã‹ã‚‚æ‹¬å¼§ã®ä¸­ã«ã„ã‚‹(ä»¥ä¸‹åŒæ§˜)
-imap [ []<left>
-imap ( ()<left>
-imap { {}<left>
+" #####•\¦İ’è#####
+set number       "s”Ô†‚ğ•\¦‚·‚é
+set title        "•ÒW’†‚Ìƒtƒ@ƒCƒ‹–¼‚ğ•\¦
+set showmatch    "Š‡ŒÊ“ü—Í‚Ì‘Î‰‚·‚éŠ‡ŒÊ‚ğ•\¦
+syntax on        "ƒR[ƒh‚ÌF•ª‚¯
+set tabstop=4    "ƒCƒ“ƒfƒ“ƒg‚ğƒXƒy[ƒX4‚Â•ª‚Éİ’è
+set smartindent  "ƒI[ƒgƒCƒ“ƒfƒ“ƒg
+"set list         ‹ó”’•¶š‚ğ‰Â‹‰»‚·‚é
+			     "‹ó”’•¶š‚ª$‚Å•\Œ»‚³‚ê‚ÄŸT“©‚µ‚©‚Á‚½‚Ì‚Åíœ
+set cursorline   "•ÒWs‚Ìs”Ô†‚ğí‚ÉƒnƒCƒ‰ƒCƒg‚·‚é
+set pumheight=10 "ƒ|ƒbƒvƒAƒbƒvƒƒjƒ…[‚ÌÅ‘å‚‚³‚ğ§Œä‚µ‚Ü‚·B
 
-nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+" #####ŒŸõİ’è#####
+set ignorecase  "‘å•¶š/¬•¶š‚Ì‹æ•Ê‚È‚­ŒŸõ‚·‚é
+set smartcase   "ŒŸõ•¶š—ñ‚É‘å•¶š‚ªŠÜ‚Ü‚ê‚Ä‚¢‚éê‡‚Í‹æ•Ê‚µ‚ÄŒŸõ‚·‚é
+set wrapscan    "ŒŸõ‚ÉÅŒã‚Ü‚Ås‚Á‚½‚çÅ‰‚É–ß‚é
+set hlsearch    "ŒŸõŒ‹‰Ê‚ğƒnƒCƒ‰ƒCƒg•\¦‚·‚é
+
+" ####ƒL[ƒ}ƒbƒv#####
+imap <C-j> <esc>" ƒCƒ“ƒT[ƒgƒ‚[ƒh‚Ì‚É C-j ‚Åƒm[ƒ}ƒ‹ƒ‚[ƒh‚É–ß‚é
+imap [ []<left> " [ ‚Á‚Ä‘Å‚Á‚½‚ç [] ‚Á‚Ä“ü—Í‚³‚ê‚Ä‚µ‚©‚àŠ‡ŒÊ‚Ì’†‚É‚¢‚é(ˆÈ‰º“¯—l)
+imap ( ()<left> " ( ‚Á‚Ä‘Å‚Á‚½‚ç () ‚Á‚Ä“ü—Í‚³‚ê‚Ä‚µ‚©‚àŠ‡ŒÊ‚Ì’†‚É‚¢‚é(ˆÈ‰º“¯—l)
+imap { {}<left> " { ‚Á‚Ä‘Å‚Á‚½‚ç {} ‚Á‚Ä“ü—Í‚³‚ê‚Ä‚µ‚©‚àŠ‡ŒÊ‚Ì’†‚É‚¢‚é(ˆÈ‰º“¯—l)
+
 set noundofile
 set nobackup
 
@@ -47,9 +51,10 @@ if has('vim_starting')
     set rtp+=$HOME/.vim/bundle/neobundle.vim/
 endif
     call neobundle#begin(expand('~/.vim/bundle'))
+"   call neobundle#begin(expand('$HOME/.vim/bundle/neobundle.vim'))
         NeoBundleFetch 'Shougo/neobundle.vim'
-        " ã“ã“ã‹ã‚‰ NeoBundle ã§ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚’è¨­å®šã—ã¾ã™
-        " NeoBundle ã§ç®¡ç†ã™ã‚‹ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚’è¿½åŠ ã—ã¾ã™ã€‚
+        " ‚±‚±‚©‚ç NeoBundle ‚Åƒvƒ‰ƒOƒCƒ“‚ğİ’è‚µ‚Ü‚·
+        " NeoBundle ‚ÅŠÇ—‚·‚éƒvƒ‰ƒOƒCƒ“‚ğ’Ç‰Á‚µ‚Ü‚·B
         NeoBundle 'Shougo/neocomplcache.git'
         NeoBundle 'Shougo/unite.vim.git'
     call neobundle#end()
