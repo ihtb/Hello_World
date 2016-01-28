@@ -1,9 +1,12 @@
 filetype plugin indent on
 
-set nowrap        "’·‚¢s‚ğÜ‚è•Ô‚³‚È‚¢
-set ruler
-set wildmenu
-set showcmd
+set nowrap                  "’·‚¢s‚ğÜ‚è•Ô‚³‚È‚¢
+set clipboard=unnamed       "ƒNƒŠƒbƒvƒ{[ƒh‚ğg‚¦‚é‚æ‚¤‚É‚·‚é
+set history=50              "ƒRƒ}ƒ“ƒh—š—ğ‚ğ50ŒÂ‚Ü‚Å•Û‚·‚é
+set ruler                   "‰æ–Ê‰º•”‚Ìƒo[‚ÉŒ»İ‚ÌƒJ[ƒ\ƒ‹‚ÌˆÊ’u‚ğ•\¦‚·‚é
+set wildmenu                "ƒtƒ@ƒCƒ‹–¼•âŠ®‹@”\ƒIƒ“
+set wildmode=longest,full   "ƒtƒ@ƒCƒ‹–¼•âŠ®‹@”\ƒpƒ‰ƒ[ƒ^İ’è
+set showcmd                 "ƒRƒ}ƒ“ƒh‚ğ•\¦
 
 " #####ƒ^ƒu“ü—Íİ’è#####
 set shiftwidth=4   "vim‚ª©“®‚Å¶¬‚·‚éi“Ç‚İ‚İ‚È‚Çjtab•‚ğƒXƒy[ƒX4‚Â•¶‚É‚·‚é
@@ -11,10 +14,6 @@ set shiftwidth=4   "vim‚ª©“®‚Å¶¬‚·‚éi“Ç‚İ‚İ‚È‚Çjtab•‚ğƒXƒy[ƒX4‚Â•¶‚É‚
 "set expandtab     TAB‚ğƒXƒy[ƒX‚É•ÏŠ·
 set smarttab       "s“ª‚ÅTAB‚ğ“ü—Í‚µ‚½Ashiftwidth‚Ì’l‚¾‚¯ƒCƒ“ƒfƒ“ƒg‚·‚é
 set smartindent    "‰üs‚É©“®‚ÅƒCƒ“ƒfƒ“ƒg‚ğ“ü‚ê‚é
-
-set clipboard=unnamed "ƒNƒŠƒbƒvƒ{[ƒh‚ğg‚¦‚é‚æ‚¤‚É‚·‚é
-
-set history=50
 
 " #####•\¦İ’è#####
 set number       "s”Ô†‚ğ•\¦‚·‚é
@@ -27,6 +26,8 @@ set smartindent  "ƒI[ƒgƒCƒ“ƒfƒ“ƒg
 			     "‹ó”’•¶š‚ª$‚Å•\Œ»‚³‚ê‚ÄŸT“©‚µ‚©‚Á‚½‚Ì‚Åíœ
 set cursorline   "•ÒWs‚Ìs”Ô†‚ğí‚ÉƒnƒCƒ‰ƒCƒg‚·‚é
 set pumheight=10 "ƒ|ƒbƒvƒAƒbƒvƒƒjƒ…[‚ÌÅ‘å‚‚³‚ğ§Œä‚µ‚Ü‚·B
+set columns=160  "ƒEƒBƒ“ƒhƒE‚Ì•
+set lines=75     "ƒEƒBƒ“ƒhƒE‚Ì‚‚³
 
 " #####ŒŸõİ’è#####
 set ignorecase  "‘å•¶š/¬•¶š‚Ì‹æ•Ê‚È‚­ŒŸõ‚·‚é
@@ -40,8 +41,9 @@ imap [ []<left> " [ ‚Á‚Ä‘Å‚Á‚½‚ç [] ‚Á‚Ä“ü—Í‚³‚ê‚Ä‚µ‚©‚àŠ‡ŒÊ‚Ì’†‚É‚¢‚é(ˆÈ‰º“¯—l)
 imap ( ()<left> " ( ‚Á‚Ä‘Å‚Á‚½‚ç () ‚Á‚Ä“ü—Í‚³‚ê‚Ä‚µ‚©‚àŠ‡ŒÊ‚Ì’†‚É‚¢‚é(ˆÈ‰º“¯—l)
 imap { {}<left> " { ‚Á‚Ä‘Å‚Á‚½‚ç {} ‚Á‚Ä“ü—Í‚³‚ê‚Ä‚µ‚©‚àŠ‡ŒÊ‚Ì’†‚É‚¢‚é(ˆÈ‰º“¯—l)
 
-set noundofile
-set nobackup
+"#####ƒoƒbƒNƒAƒbƒvƒtƒ@ƒCƒ‹#####
+set noundofile  "un~ƒtƒ@ƒCƒ‹‚ğì¬‚µ‚È‚¢
+set nobackup    "ƒoƒbƒNƒAƒbƒvƒtƒ@ƒCƒ‹‚ğì¬‚µ‚È‚¢
 
 "NeoBundle set up start
 set nocompatible
