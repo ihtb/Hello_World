@@ -8,14 +8,14 @@ set wildmenu                "ファイル名補完機能オン
 set wildmode=longest,full   "ファイル名補完機能パラメータ設定
 set showcmd                 "コマンドを表示
 
-" #####タブ入力設定#####
+" ##########タブ入力設定##########
 set shiftwidth=4   "vimが自動で生成する（読み込み時など）tab幅をスペース4つ文にする
 "set softtabstop=4 キーボードでTABを入力した際、TABを4文字のスペースを入力する
 "set expandtab     TABをスペースに変換
 set smarttab       "行頭でTABを入力した時、shiftwidthの値だけインデントする
 set smartindent    "改行時に自動でインデントを入れる
 
-" #####表示設定#####
+" ##########表示設定##########
 set number       "行番号を表示する
 set title        "編集中のファイル名を表示
 set showmatch    "括弧入力時の対応する括弧を表示
@@ -26,40 +26,71 @@ set smartindent  "オートインデント
 			     "空白文字が$で表現されて鬱陶しかったので削除
 set cursorline   "編集行の行番号を常にハイライトする
 set pumheight=10 "ポップアップメニューの最大高さを制御します。
-set columns=160  "ウィンドウの幅
-set lines=75     "ウィンドウの高さ
+set columns=150  "ウィンドウの幅
+set lines=30     "ウィンドウの高さ
 
-" #####検索設定#####
+" ##########検索設定##########
 set ignorecase  "大文字/小文字の区別なく検索する
 set smartcase   "検索文字列に大文字が含まれている場合は区別して検索する
 set wrapscan    "検索時に最後まで行ったら最初に戻る
 set hlsearch    "検索結果をハイライト表示する
 
-" ####キーマップ#####
+" ##########キーマップ##########
 imap <C-j> <esc>" インサートモードの時に C-j でノーマルモードに戻る
 imap [ []<left> " [ って打ったら [] って入力されてしかも括弧の中にいる(以下同様)
 imap ( ()<left> " ( って打ったら () って入力されてしかも括弧の中にいる(以下同様)
 imap { {}<left> " { って打ったら {} って入力されてしかも括弧の中にいる(以下同様)
 
-"#####バックアップファイル#####
+" ##########バックアップファイル##########
 set noundofile  "un~ファイルを作成しない
 set nobackup    "バックアップファイルを作成しない
 
-"NeoBundle set up start
-set nocompatible
-filetype off            " for NeoBundle
- 
-if has('vim_starting')
-    set rtp+=$HOME/.vim/bundle/neobundle.vim/
-endif
-    call neobundle#begin(expand('~/.vim/bundle'))
-"   call neobundle#begin(expand('$HOME/.vim/bundle/neobundle.vim'))
-        NeoBundleFetch 'Shougo/neobundle.vim'
-        " ここから NeoBundle でプラグインを設定します
-        " NeoBundle で管理するプラグインを追加します。
-        NeoBundle 'Shougo/neocomplcache.git'
-        NeoBundle 'Shougo/unite.vim.git'
-    call neobundle#end()
+" ##########NeoBundle set up start##########
+if 0 | endif
 
-filetype plugin indent on       " restore filetype
+filetype off
+
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" originalrepos on github
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+    \ 'windows' : 'make -f make_mingw32.mak',
+    \ 'cygwin' : 'make -f make_cygwin.mak',
+    \ 'mac' : 'make -f make_mac.mak',
+    \ 'unix' : 'make -f make_unix.mak',
+  \ },
+  \ }
+NeoBundle 'VimClojure'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 't9md/vim-textmanip'
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'tomasr/molokai'
+""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+
+call neobundle#end()
+
+filetype plugin indent on     " required!
+filetype indent on
+syntax on
+
+NeoBundleCheck
 "NeoBundle set up end
