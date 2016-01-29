@@ -46,51 +46,36 @@ set noundofile  "un~ファイルを作成しない
 set nobackup    "バックアップファイルを作成しない
 
 " ##########NeoBundle set up start##########
-if 0 | endif
+ if 0 | endif
 
-filetype off
+ if has('vim_starting')
+   if &compatible
+     set nocompatible               " Be iMproved
+   endif
 
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
+   " Required:
+   "set runtimepath+=~/.vim/bundle/neobundle.vim/
+   set runtimepath+=C:/Users/pcadmin/.vim/bundle/neobundle.vim "相対パスではなく絶対パスで指定
+ endif
 
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
+ " Required:
+ "call neobundle#begin(expand('~/.vim/bundle/'))
+ call neobundle#begin(expand('C:/Users/pcadmin/.vim/bundle/neobundle.vim'))"相対パスではなく絶対パスで指定
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+ " Let NeoBundle manage NeoBundle
+ " Required:
+ NeoBundleFetch 'Shougo/neobundle.vim'
 
-" originalrepos on github
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-  \ },
-  \ }
-NeoBundle 'VimClojure'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 't9md/vim-textmanip'
+ " My Bundles here:
+ " Refer to |:NeoBundle-examples|.
+ " Note: You don't set neobundle setting in .gvimrc!
 
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'tomasr/molokai'
-""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+ call neobundle#end()
 
-call neobundle#end()
+ " Required:
+ filetype plugin indent on
 
-filetype plugin indent on     " required!
-filetype indent on
-syntax on
-
-NeoBundleCheck
-"NeoBundle set up end
+ " If there are uninstalled bundles found on startup,
+ " this will conveniently prompt you to install them.
+ NeoBundleCheck
+" ##########NeoBundle set up end  ##########
