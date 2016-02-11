@@ -27,6 +27,9 @@ set cursorline      "編集行の行番号を常にハイライトする
 set pumheight=10    "ポップアップメニューの最大高さを制御します。
 set columns=100     "ウィンドウの幅
 set lines=30        "ウィンドウの高さ
+let g:lightline = {
+		\ 'colorscheme': 'jellybeans',
+		\}
 
 " ##########検索設定##########
 set ignorecase  "大文字/小文字の区別なく検索する
