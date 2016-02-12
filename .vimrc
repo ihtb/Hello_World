@@ -71,6 +71,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'Townk/vim-autoclose'
 "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
 call neobundle#end()
