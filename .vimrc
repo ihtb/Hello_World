@@ -31,6 +31,11 @@ let g:lightline = {
 		\ 'colorscheme': 'jellybeans',
 		\}
 
+" ##########Š‡ŒÊ“ü—Í•âŠ®##########
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+
 " ##########ŒŸõİ’è##########
 set ignorecase  "‘å•¶š/¬•¶š‚Ì‹æ•Ê‚È‚­ŒŸõ‚·‚é
 set smartcase   "ŒŸõ•¶š—ñ‚É‘å•¶š‚ªŠÜ‚Ü‚ê‚Ä‚¢‚éê‡‚Í‹æ•Ê‚µ‚ÄŒŸõ‚·‚é
@@ -58,7 +63,14 @@ call neobundle#begin(expand('$HOME/.vim/bundle/'))
 
 " originalrepos on github
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc', 
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+  \     'windows' : 'make -f make_mingw32.mak',
+  \     'cygwin' : 'make -f make_cygwin.mak',
+  \     'mac' : 'make -f make_mac.mak',
+  \     'unix' : 'make -f make_unix.mak',
+  \    },
+  \ }
 NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
