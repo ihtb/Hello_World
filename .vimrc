@@ -1,10 +1,19 @@
-set nowrap                  "長い行を折り返さない
-set clipboard=unnamed       "クリップボードを使えるようにする
-set history=50              "コマンド履歴を50個まで保持する
-set ruler                   "画面下部のバーに現在のカーソルの位置を表示する
-set wildmenu                "ファイル名補完機能オン
-set wildmode=longest,full   "ファイル名補完機能パラメータ設定
-set showcmd                 "コマンドを表示
+set nowrap                      "長い行を折り返さない
+set clipboard=unnamed           "クリップボードを使えるようにする
+set history=50                  "コマンド履歴を50個まで保持する
+set ruler                       "画面下部のバーに現在のカーソルの位置を表示する
+set wildmenu                    "ファイル名補完機能オン
+set wildmode=longest,full       "ファイル名補完機能パラメータ設定
+set showcmd                     "コマンドを表示
+set whichwrap=b,s,h,l,<,>,~,[,] "前行末　カレント行頭の移動許可
+
+" ##########印刷用フォント##########
+if has('printer')
+  if has('win32')
+    set printfont=MS_Mincho:h12:cSHIFTJIS
+    "set printfont=MS_Gothic:h12:cSHIFTJIS
+  endif
+endif
 
 " ##########タブ入力設定##########
 set shiftwidth=4   "vimが自動で生成する（読み込み時など）tab幅をスペース4つ文にする
@@ -18,7 +27,9 @@ set number          "行番号を表示する
 set title           "編集中のファイル名を表示
 set showmatch       "括弧入力時の対応する括弧を表示
 syntax on           "コードの色分け
-colorscheme molokai "カラースキーム選択 
+"カラースキーム選択 
+"colorscheme molokai
+colorscheme koehler
 set tabstop=4       "インデントをスペース4つ分に設定
 set smartindent     "オートインデント
 "set list            空白文字を可視化する
@@ -31,10 +42,15 @@ let g:lightline = {
 		\ 'colorscheme': 'jellybeans',
 		\}
 
-" ##########括弧入力補完##########
+" ##########キーバインド設定##########
+"括弧入力補完
 inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap ( ()<Left>
+"全選択
+"nnoremap <C-a> gg<S-v><S-g>
+"nmap <silent> <F5> ggVG
+"nmap <silent> <F6> :%y<CR>
 
 " ##########検索設定##########
 set ignorecase  "大文字/小文字の区別なく検索する
@@ -82,8 +98,8 @@ NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'Townk/vim-autoclose'
+"NeoBundle 'tomasr/molokai'
+"NeoBundle 'Townk/vim-autoclose'
 "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
 call neobundle#end()
