@@ -42,6 +42,11 @@ let g:lightline = {
 		\ 'colorscheme': 'jellybeans',
 		\}
 
+" ##########エンコード設定##########
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 " ##########キーバインド設定##########
 "括弧入力補完
 inoremap { {}<Left>
