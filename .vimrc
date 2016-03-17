@@ -34,13 +34,20 @@ set tabstop=4       "インデントをスペース4つ分に設定
 set smartindent     "オートインデント
 "set list            空白文字を可視化する
 			        "空白文字が$で表現されて鬱陶しかったので削除
-set cursorline      "編集行の行番号を常にハイライトする
+"set cursorline      編集行の行番号を常にハイライトする
 set pumheight=10    "ポップアップメニューの最大高さを制御します。
 set columns=100     "ウィンドウの幅
-set lines=30        "ウィンドウの高さ
+set lines=35        "ウィンドウの高さ
 let g:lightline = {
 		\ 'colorscheme': 'jellybeans',
 		\}
+" カレント行ハイライト
+set cursorline
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=BLACK 
+" ##########エンコード設定##########
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
 
 " ##########エンコード設定##########
 set encoding=utf-8
