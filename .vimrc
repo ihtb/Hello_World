@@ -63,6 +63,11 @@ inoremap ( ()<Left>
 "nnoremap <C-a> gg<S-v><S-g>
 "nmap <silent> <F5> ggVG
 "nmap <silent> <F6> :%y<CR>
+" tagsジャンプの時に複数ある時は一覧表示                                        
+nnoremap <C-]> g<C-]> 
+" tagsジャンプの時に複数ある時は一覧表示                                        
+nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
 " ##########検索設定##########
 set ignorecase  "大文字/小文字の区別なく検索する
@@ -113,6 +118,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 "NeoBundle 'tomasr/molokai'
 "NeoBundle 'Townk/vim-autoclose'
 "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+NeoBundle 'szw/vim-tags'
 
 call neobundle#end()
 
