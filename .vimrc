@@ -44,15 +44,13 @@ let g:lightline = {
 " カレント行ハイライト
 set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE 
-" ##########エンコード設定##########
-set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
+set ambiwidth=double
 
 " ##########エンコード設定##########
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
+
 
 " ##########キーバインド設定##########
 "括弧入力補完
