@@ -36,8 +36,8 @@ set smartindent     "オートインデント
 			        "空白文字が$で表現されて鬱陶しかったので削除
 "set cursorline      編集行の行番号を常にハイライトする
 set pumheight=10    "ポップアップメニューの最大高さを制御します。
-set columns=100     "ウィンドウの幅
-set lines=35        "ウィンドウの高さ
+set columns=120     "ウィンドウの幅
+set lines=30        "ウィンドウの高さ
 let g:lightline = {
 		\ 'colorscheme': 'jellybeans',
 		\}
