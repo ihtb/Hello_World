@@ -45,6 +45,7 @@ let g:lightline = {
 set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE 
 set ambiwidth=double
+set formatoptions=q
 
 " ########## エンコード設定 ##########
 set encoding=utf-8
@@ -66,6 +67,8 @@ nnoremap <C-]> g<C-]>
 " tagsジャンプの時に複数ある時は一覧表示                                        
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+" Ctrl + j でノーマルモードに移行する。
+inoremap <C-j> <ESC>
 
 " ########## 検索設定 ##########
 set ignorecase  "大文字/小文字の区別なく検索する
